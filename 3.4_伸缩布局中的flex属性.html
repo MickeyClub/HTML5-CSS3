@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        ul{
+            padding: 0;
+            list-style: none;
+            border: 1px solid #000;
+            width: 600px;
+            height: 1000px;
+            display: flex;
+            justify-content: space-around;
+
+            flex-direction: column;
+        }
+
+        li {
+
+            width: 150px;
+            flex:1;
+            height: 150px;
+            background-color: yellowgreen;
+            text-align: center;
+            line-height: 150px;
+        }
+
+       /* 占1份 */
+        /* li:nth-child(1){
+            flex: 1;
+        } */
+            /* 占2份 */
+        /* li:nth-child(2){
+            flex: 2;
+        } */
+            /* 占3份 */
+        /* li:nth-child(3){
+            flex:3;
+        } */
+
+        /* 总分数为6份，也就是说第一个占1/6 第二个占2/6  第三个站 3/6  占主轴方向的比例 
+            1000 * 1/6 = 166.666
+            1000 * 2/6 = 333.333
+            1000 * 3/6 = 500
+        */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

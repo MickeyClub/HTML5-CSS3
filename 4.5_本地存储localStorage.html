@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="set" value="存储">
+    <input type="button" id="set2" value="存储2">
+    <input type="button" id="get" value="读取">
+    <input type="button" id="remove" value="删除">
+
+    <input type="button" id="arr" value="存数组">
+    <input type="button" id="obj" value="存对象">
+    <input type="button" id="getArr" value="取数组">
+    <input type="button" id="getObj" value="取对象">
+    <input type="button" id="clear" value="清空">
+
+</body>
+<!-- 
+
+    localStorage可以用来存储一些数据到浏览器
+
+        跟cookie很像，cookie也是存在浏览器端。
+
+        但是cookie有失效时间，而localStorage没有失效时间
+
+        LocalStorage只有自己写代码删或者手动删才会删掉
+
+
+        localStorage把所有的数据都当字符串来存，所以取出来也是字符串
+
+        如果存的是复杂类型，那么会调用复杂类型的toString方法再来存储
+
+
+        如果要存复杂类型，那么就先把复杂类型的数据转成JSON字符串再存
+
+        取出来的时候把这个字符串再转回JS数据
+ -->
+
+</html>
+
+<script>
+    // 存储
+    document.getElementById('set').onclick = function () {
+        //存储
+        //参数1：key
+        //参数2：value
+       localStorage.setItem('name','Mickey')
+    }
+
+    // 覆盖存储
+    document.getElementById('set2').onclick = function(){
+        //会覆盖同一个键会被覆盖
+        localStorage.setItem('name','Motto')
+    }
+
+    //获取
+    document.getElementById('get').onclick = function () {
+        //把读取到的值当做返回值返回
+       var res = localStorage.getItem('name');
+       console.log(res);
+
+    }
+
+    //移除
+    document.getElementById('remove').onclick = function () {
+        localStorage.removeItem('name')
+    }
+
+    // 存数组
+    document.getElementById('arr').onclick = function () {
+        //数组
+        var arr = [10, 20, 30, 40, 50];
+        //取到的是字符串,原因是localStorage在存复杂数据类型是会帮arr用toString()方法
+        // localStorage.setItem('arr',arr) //10,20,30,40,50
+        //要存复杂数据解决方法:  将复杂的js数据转成json数据,最后取出来在将JSON数据转成js数据
+        var str = JSON.stringify(arr);
+        localStorage.setItem('arr',str);
+
+    }
+
+    //存对象
+    document.getElementById('obj').onclick = function () {
+        var obj = { name: "jack", age: 16 };
+        // console.log(obj.toString());
+        var str = JSON.stringify(obj);
+        localStorage.setItem('obj', str);
+    }
+
+    //取数组
+    document.getElementById('getArr').onclick = function () {
+        var res = localStorage.getItem('arr')
+        //将JSON对象转成js对象  如果不转成js对象,获取到的是json字符串
+        var arr = JSON.parse(res);
+        console.log(arr);
+    }
+
+    //取对象
+    document.getElementById('getObj').onclick = function () {
+        var res = localStorage.getItem('obj');
+        var obj = JSON.parse(res);
+        console.log(obj);
+    }
+
+    //清除所有数据
+    document.getElementById('clear').onclick = function(){
+        localStorage.clear();
+    }
+</script>

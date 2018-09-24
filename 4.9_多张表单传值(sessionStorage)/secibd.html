@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        选择职业:
+        <select name="" id="job">
+            <option>学生</option>
+            <option>公务员</option>
+            <option>员工</option>
+            <option>技师</option>
+            <option>老师</option>
+        </select>
+        月收入
+        <input type="text" id="salary">
+        <input type="button" name="" id="register" value="点我注册">
+    </form>
+</body>
+</html>
+
+<script>
+    document.getElementById('register').onclick = function () {
+        //获取到本地临时数据
+        var str = sessionStorage.getItem('info');
+        //将json转成js对象
+        var obj = JSON.parse(str);
+        //打印信息
+        console.log(obj.name);
+        console.log(obj.age);
+        console.log(obj.tel);
+        var sel = document.getElementById('job');
+        console.log(sel.value);
+        var salary = document.getElementById('salary');
+        console.log(salary.value);
+    }
+ 
+</script>

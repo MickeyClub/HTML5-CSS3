@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        a{
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        header{
+            height: 150px;
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+
+        section{
+            height: 120px;margin-top: 10px;
+            display: flex;
+        }
+
+        aside{
+            flex: 1;
+            border-right: 1px solid #fff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        article{
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        article a{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        article a:nth-child(odd){
+            border-right: 1px solid white;
+        }
+        article a:nth-child(1),article a:nth-child(2){
+            border-bottom: 1px solid white;
+        }
+        section:nth-child(1) {
+            background: #ff5555;
+        }
+        section:nth-child(2) {
+            background: #00a7f7;
+        }
+        section:nth-child(3) {
+            background: #7cb832;
+        }
+        
+        section:nth-child(4){
+            height: 60px;
+            background: #ff9900
+        }
+        section:nth-child(4) a{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section:nth-child(4) a:nth-child(n+2){
+            border-left: 1px solid white;
+        }
+
+        section:nth-child(5){
+            background: white;
+            flex-direction: column;
+        }
+        section:nth-child(5) div{
+            flex: 1;
+            display: flex;
+        }
+        section:nth-child(5) div a{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #393939;
+            font-size: 12px;
+        }
+        section:nth-child(5) div i{
+            color: #43c8dc;
+            font-size: 30px
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/header.png" alt="">
+    </header>
+
+    <main>
+        <section>
+            <aside>
+                酒店
+                <i class="fa fa-hotel" aria-hidden="true"></i>
+            </aside>
+            <article>
+                <a href="#">特惠酒店</a>
+                <a href="#">海外酒店</a>
+                <a href="#">客栈</a>
+                <a href="#">名宿 </a>
+            </article>
+        </section>
+        <section>
+            <aside>
+                机票
+                <i class="fa fa-hotel" aria-hidden="true"></i>
+            </aside>
+            <article>
+                <a href="#">特价机票</a>
+                <a href="#">汽车票·船票</a>
+                <a href="#">火车票</a>
+                <a href="#">专车·自驾</a>
+            </article>
+        </section>
+        <section>
+            <aside>
+                度假
+                <i class="fa fa-hotel" aria-hidden="true"></i>
+            </aside>
+            <article>
+                <a href="#">经典·门票</a>
+                <a href="#">旅游团购</a>
+                <a href="#">自由行</a>
+                <a href="#">周边·短途</a>
+            </article>
+        </section>
+        <section>
+            <a href="#">金融理财</a>
+            <a href="#">保险车险</a>
+            <a href="#">全球购</a>
+        </section>
+
+        <section>
+            <div>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+                <a href="#">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    签证
+                </a>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- 
+
+    为了更好的3D效果，一个视距就够了
+
+    视距加在父盒子上会效果更好
+
+    但是注意：加在父盒子上，不要用transform来加，用perspective直接加
+
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 600px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+
+        li {
+            width: 180px;
+            height: 180px;
+            background-color: yellowgreen;
+            float: left;
+            margin-left: 15px;
+            margin-top: 10px;
+            transition: all 1s;
+        }
+        
+        /* 第一个ul是视距加在每个li身上 */
+        ul:first-child li{
+            transform: perspective(500px);
+        }
+
+        ul:first-child:hover li{
+            transform: perspective(500px) rotateY(90deg);
+        }
+
+
+        /* 把视距不加在每个li身上，而只是父盒子身上（也就是加在UL上） */
+        ul:last-child{
+
+            /* 如果视距加在父盒子身上，那么不能用transform给，而应该直接使用perspetive属性 */  
+            perspective: 500px;
+        }
+
+        ul:last-child:hover li{
+            transform: rotateY(90deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

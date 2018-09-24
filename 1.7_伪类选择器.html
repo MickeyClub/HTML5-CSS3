@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        伪元素选择器：before 和 after
+
+        伪类选择器：hover,link,active,visited 主要是a标签的
+        hover:鼠标悬停时的样式
+        link:点击之前的样式
+        active：点击时的样式
+        visited：点击后的样式
+
+
+        first-child：找到第一个子元素
+        last-child：找到最后一个紫苑寺
+        nth-child：找到某个位置的子元素 
+                    even：代表找到所有偶数
+                    odd；代表找到所有奇数下·
+                    n：代表找到所有
+                    7n：代表找到所有7的倍数
+                    7n-1：代表找到所有7的倍数前一位的数
+
+        伪类选择器都有个特点：前面有一个冒号 
+     -->
+
+     <style>
+
+         /* 既要满足是li标签，还要满足是父元素中的第一个子元素  */
+         /* 不能理解为找第一个li，只能理解为找第一个子元素li */
+         li:first-child{
+
+             color:red;
+         }
+         
+         /* 既要满足是li，又要满足是最后一个子元素 */
+         li:last-child{
+
+             color:green;
+         }
+         
+         /* 还是代表找第一个子元素li */
+         li:nth-child(2){
+
+            font-size: 30px;
+         }
+         
+         /* 所有li标签 */
+         li:nth-child(n){
+
+             font-weight: bold;
+         }
+         
+         /* 找到所有偶数li */
+         /* li:nth-child(2n){ */
+         li:nth-child(even){
+
+             background-color: orange;
+         }
+
+         /* li:nth-child(2n-1){ */
+         li:nth-child(odd){
+
+            background-color: red;
+        }
+     </style>
+</head>
+<body>
+
+    <ul>
+        <!-- <span>我是span</span> -->
+        <li>隔壁老王1</li>
+        <li>隔壁老王2</li>
+        <li>隔壁老王3</li>
+        <li>隔壁老王4</li>
+        <li>隔壁老王5</li>
+        <!-- <a href="#">这是a标签</a> -->
+    </ul>
+
+</body>
+</html>

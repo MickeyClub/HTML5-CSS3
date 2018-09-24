@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            /*
+               3D开发时视距一定要加在不动的那个父元素身上，才有看到的上帝视觉
+               小技巧：一个一个往上加
+            */
+            /* transform: perspective(500px); */
+            perspective: 1500px;
+
+        }
+
+        ul{
+            width: 200px;
+            height: 200px;
+            padding: 0;
+            list-style: none;
+
+            margin: 200px auto;
+            /* border: 1px solid #000; */
+
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 50s;
+
+        }
+        ul:hover{
+            transform: rotateX(2700deg) rotateY(2700deg) rotateZ(2700deg);
+        }
+        li{
+            transition: all 2s;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /* opacity: 0.5; */
+            background: gray;
+            display: flex;
+        }
+        li:nth-child(1){
+            left: -200px;
+            transform: rotateY(90deg);
+            transform-origin: right;
+            
+        }
+        li:nth-child(2){
+            top: -200px;
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+        }
+        li:nth-child(3){
+            right: -200px;
+            transform: rotateY(-90deg);
+            transform-origin: left;
+        }
+       
+        li:nth-child(4){
+            bottom: -200px;
+            transform: rotateX(90deg);
+            transform-origin: top;
+        }
+        li:nth-child(5){
+        }
+        li:nth-child(6){
+            transform: translateZ(200px);
+        }
+       
+        span{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        .one{
+            justify-content: center;
+            align-items: center;
+        }
+
+        .two{
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .three{
+            justify-content: space-around;
+        }
+
+        .three span:nth-child(2){
+            align-self: center;
+        }
+        .three span:nth-child(3){
+            align-self: flex-end;
+        }
+       
+        .four>div{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="one">
+            <span></span>
+        </li>
+        <li class="two">
+            <span></span><span></span>
+        </li>
+        <li class="three">
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li class="four">
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+        </li>
+        <li class="four">
+            <div><span></span><span></span></div>
+            <div><span></span></div>
+            <div><span></span><span></span></div>
+        </li>
+        <li class="four">
+            <div><span></span><span></span><span></span></div>
+            <div><span></span><span></span><span></span></div>
+        </li>
+    </ul>
+</body>
+</html>

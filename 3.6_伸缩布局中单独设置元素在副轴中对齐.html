@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    align-self:设置单独某个元素在副轴的位置
+
+            flex-start：在副轴起点
+            flex-end：在副轴终点
+            center：在副轴居中
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        ul {
+            padding: 0;
+            list-style: none;
+            border: 1px solid #000;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            
+            justify-content: space-around;
+            /* 统一设置在副轴位置 */
+            align-items: center;
+        }
+
+        li {
+
+            width: 150px;
+            height: 150px;
+            background-color: yellowgreen;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        li:nth-child(1){
+
+            align-self:flex-end;
+        }
+
+        li:nth-child(3){
+
+            align-self: flex-start;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

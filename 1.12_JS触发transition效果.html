@@ -1,0 +1,60 @@
+<!-- 
+
+        1.如果要用JS触发transition，只要加一个类就行了，记得类里要有transition，或者默认就有transition
+
+        2.classList：能获取到某个元素的所有类，一个类是一个元素
+                    add：添加一个类
+                    remove:删除一个类
+                    toggle：切换一个类，原来有的就删掉，原来没的就加上
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            transition: all 1.5s;
+        }
+
+        .animation{
+
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <input type="button" value="放大" id="bigger">
+    <input type="button" value="复原" id="reset">
+    <input type="button" value="开关" id="turn">
+</body>
+</html>
+
+<script>
+
+    var box = document.querySelector('.box');
+    document.getElementById('bigger').onclick = function(){
+        box.classList.add('animation')  
+    }
+
+    document.getElementById('reset').onclick = function(){
+        box.classList.remove('animation');
+    }
+
+    document.getElementById('turn').onclick = function(){
+        // 如果之前类里面没有animation，就给你加上animation
+        // 如果原来类里面有animation，就给你去掉animation
+        box.classList.toggle('animation');
+    }
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="key">
+    <input type="button" id="search" value="搜索">
+    <ul id="history"></ul>
+</body>
+
+</html>
+
+<script>    
+
+    //1.准备一个数组
+    //2.按钮点击事件,并将输入框的内容添加到数组中
+    //3.将数组转成json字符串
+    //4.将数据存到本地
+    //5.每次打开读取本地数据
+    //6.判断本地是否有值,将获取到的数据转为js对象并将历史信息显示,否则是空数组
+    var str = localStorage.getItem('arr');
+    // console.log(str);
+
+    //如果
+    if(str){
+        //将获取到的数据转为js
+        var arr = JSON.parse(str);
+        //将本地数据追加到ul中
+        for (var i = 0; i < arr.length; i++) {
+            //创建新li
+            var li = document.createElement('li');
+            li.innerHTML = arr[i];
+            document.getElementById('history').appendChild(li);
+        }
+    }else{
+        //没有本地数据时,就定义一个空数组
+        var arr = [];
+    }
+    
+
+    
+
+    //输入框内容
+    var key = document.getElementById('key');
+
+    //按钮点击事件
+    document.getElementById('search').onclick = function () {
+        //将点击的内容添加到数组中
+        arr.push(key.value);
+
+        //将js对象转为字符串对象
+        var str = JSON.stringify(arr);
+
+        //存储到本地
+        localStorage.setItem('arr',str);
+    }
+
+
+</script>

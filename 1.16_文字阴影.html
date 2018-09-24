@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+
+            background-color: #000;
+        }
+        p{
+           font-size: 200px;
+           text-align: center;
+           /* color:white; */
+           transition: all 1s;
+            
+          /*
+            参数只有4个 
+                参数1：水平偏移
+                参数2：垂直偏移
+                参数3：阴影模糊度
+                参数4：阴影颜色
+
+            可以有多个阴影，用逗号隔开
+         */
+           /* text-shadow: -5px -5px 10px yellow,-10px -10px 10px green,-15px -15px 10px red; */
+        }
+
+        p:hover{
+             
+            text-shadow: -5px -5px 10px yellow,-10px -10px 10px red,-15px -15px 10px green;
+        }
+    </style>
+</head>
+<body>
+    <p>张铭钦</p>
+</body>
+</html>

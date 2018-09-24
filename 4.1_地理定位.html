@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+
+        获取到你的设备当前所在的经纬度
+            
+        如何获取地理位置？
+                设备有GPS模块： 用GPS进行定位，精度是最高的，连接卫星来定位
+                        精度是最高的
+
+                wifi定位：利用的是大数据，你要连wifi，本质上连的是路由器，都有一个MAC地址，这个就是路由器的唯一标识，可能有的时候你连这个WIFI刚好打开了百度地图，那么百度地图会自动获取到你GPS定位的信息，和当前连接的路由器的MAC地址，把这个路由器信息和你定位到的经纬度上传到服务器，假设以后有电脑来连wifi，百度地图知不知道它在哪？知道的
+
+                    我不连wifi，只要开了wifi精度就更高了
+                        因为你打开wifi后，手机上就会搜索各种附近的wifi信号，它根据你对各种wifi信号的强弱，利用三角定位来确定你大概位置
+
+
+                网络基站定位：原理相当于是wifi定位
+                        这个定位的精度是最差的，会有误差
+
+    -->
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //1. 写一个方法 navigator
+    navigator.geolocation.getCurrentPosition(function (loc) {
+        
+        console.log(loc);
+        
+        //获取纬度
+        console.log(loc.coords.latitude);
+
+        //获取纬度
+        console.log(loc.coords.longitude);
+    })
+
+</script>

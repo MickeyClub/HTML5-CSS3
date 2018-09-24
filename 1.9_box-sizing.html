@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+    
+    盒子占的宽： 自身宽 + 左右padding + 左右边框 + 左右margin
+
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            padding: 10px;
+            border: 5px solid #000;
+            margin-left: 50px;
+
+            /* 因为默认情况下：padding和Border都是往外加，我们叫外扩 */
+
+            /* 内聚：padding和border都是往内加 */
+            box-sizing: border-box;
+
+            /* content-box是外扩,默认值就是这个 */
+            /* box-sizing: content-box; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+</html>

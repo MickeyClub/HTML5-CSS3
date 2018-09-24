@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 
+                参数1：动画名
+                参数2：动画的持续时间
+                参数3：延迟时间
+                参数4：动画次数 可以写具体的数字，也可以写infinite，代表无限次
+                参数5：动画效果 ease,ease-in,linear,steps
+                
+                参数6：是否要保持为动画最终效果，默认是恢复原状，不想恢复原状，就写一个forwards
+                参数7：动画方向：  normal是默认值： 就是从元素本身的样子用动画效果变成动画最终的样子
+                                  reverse：瞬间先变成动画最终样子，然后用动画效果恢复成默认样子
+                                  alernate：从初始样子用动画效果变成动画的最终样子，并且又用动画效果返回成最初样子
+                                     要用的话，最多只用alernate
+                                  alternate-reverse：跟上面相反
+                参数8：一般不会用，要用也只是单独使用
+                        是继续动画，还是暂停动画
+                            running：运行动画默认值
+                            paused：暂停动画
+
+                臣妾记不住顺序啊！写100次，就记住了
+                第二：顺序随便乱写！都可以用
+                    但是有两个时间，写在前面一定是动画持续时间，写在后面的一定是延迟时间
+            */
+            /* animation: scale 1s infinite  linear forwards alternate; */
+
+            /* animation:  alternate 1s infinite scale forwards linear ; */
+
+            animation:scale 2s infinite alternate;
+        }
+
+        .box:hover{
+
+            /* 暂停动画 */
+            animation-play-state: paused;
+        }
+
+      
+
+        @keyframes scale {
+
+            from {}
+
+            to {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

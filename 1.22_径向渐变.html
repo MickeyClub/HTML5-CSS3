@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            
+            /* 
+            以圆的形式来渐变
+                所以一开始需要确定圆心的位置，还要得到半径的大小
+            参数1：圆心位置和直径大小
+            参数2：颜色，至少要有2个颜色，最多可以N个
+            特点；剩余部分都是最后一个颜色
+             */
+            /* background-image: radial-gradient(200px at center,orange,red,blue); */
+
+            /* background: radial-gradient(200px at 100px 100px,red,green); */
+            background: radial-gradient(400px at center,red,green)
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

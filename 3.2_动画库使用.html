@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        要写动画，自己要先定义一个剧本，就有动画效果
+
+        但是，其实网上早就有大神帮我们写好了N多种动画剧本，我们直接用就可以了
+
+        这个东西就叫动画库
+
+        怎么用？
+            1.导入css
+            2.给需要动画效果的元素，加一个class叫animated，然后再加一个类，写效果的名字
+     -->
+    <link rel="stylesheet" href="animate.css">
+
+
+
+    <style>
+        @keyframes rubberBand {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+
+        img{
+
+            /* animation:rubberBand 2s 2s infinite alternate; */
+
+            animation-iteration-count: infinite;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <img src="lq.png" alt="" class="animated rubberBand">
+
+    <!-- <div class="box animation bounceOutLeft">我是文字</div> -->
+</body>
+
+</html>

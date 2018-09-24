@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- 
+
+        H5新增的结构代码：
+                header: nav
+
+                main: section :  aside,article
+
+                footer
+        IE8不支持，导入第三方库来兼容，导入的时候记得做判断，只有小于或等于IE8才导入
+
+        原理时内部用JS帮我们创建标签，并且把创建的标签转为块级元素
+
+
+        自定义属性：
+            H5规范写自定义属性的语法：data-属性名
+
+            如果按规范写，取值： 元素.dataset.属性名
+
+        box-sizing：设置内聚或外扩，默认是content-box也就是外扩
+                    border-box就是内聚
+
+        box-shadow：盒子阴影
+                    参数1：水平偏移
+                    参数2：垂直偏移
+                    参数3：模糊度
+                    参数4：阴影宽度
+                    参数5：阴影颜色
+                    inset 加了这个关键字就是内阴影
+
+        text-shadow：文字阴影
+                    参数1：水平偏移
+                    参数2：垂直偏移
+                    参数3：模糊度
+                    参数4：阴影颜色
+
+        
+        transition：
+                是一个复合属性
+                一般都直接用transition就完了，不会拆分
+
+                参数1：参与过渡的属性，一般写all
+                参数2：过渡时长
+                参数3：延时
+                参数4：动画效果，steps,linear,ease
+
+        
+        线性渐变：
+                linear-gradient();
+                    参数1：方向，也可以传角度
+                    参数2：颜色1
+                    参数3：颜色2
+                    后面可以接N个颜色
+
+        径向渐变：
+                radial-gradient();
+                参数1：直径大小和圆心位置
+                参数2：颜色1
+                参数3：颜色2
+                后面接N个颜色
+
+                其他部分都用最后一个颜色填充
+
+        变换：
+            transform
+                rotate 旋转，传入角度
+                translate：平移，传x和y值，只写一个只移动x方向
+                scale：缩放，传入倍数，如果只写一个，代表宽高都缩放
+                skew：倾斜，传入的也是角度
+
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .box{
+
+            transition-delay: 2s;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

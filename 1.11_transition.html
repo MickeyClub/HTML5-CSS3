@@ -1,0 +1,47 @@
+<!-- 
+
+    transition：加过渡效果
+
+    transition如果加在普通状态下，代表无论是hover时还是hover后都有动画效果
+    如果加在hover里，代表只有悬停时有动画效果，恢复时没有
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            
+            /* 
+                参数1：参与过渡的属性，一般写all，代表都参与
+                参数2：动画时间
+                参数3：延迟多久开始
+                参数4：动画效果： ease ,ease-in,ease-out,linear 不用记，知道就好，一般要用最多用linear或者还有一个steps分几步完成动画
+            */
+            transition: all 2s steps(5);
+        }
+
+        .box:hover{
+
+            /* transition: all 2s steps(5); */
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+
+        .container{
+
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            position: absolute;
+            right:50px;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box" draggable="true"></div>
+
+    <div class="container"></div>
+
+</body>
+</html>
+
+<script>
+    /*
+        ondragover：当有元素划入就触发
+
+        ondrop：当有元素在我区域内划入并且松手才触发
+                    但是这个事件默认不会生效，必须先在ondragover里阻止事件默认行为后才会生效
+    */
+    var box = document.getElementsByClassName('box')[0];
+    var container = document.getElementsByClassName('container')[0];
+
+    //因为在html元素中,默认不允许其他元素拖拽到自己的范围,所以需要阻止默认事件
+    container.ondragover = function (e) {
+        e.preventDefault();
+    }
+
+    //拖拽松手后触发
+    container.ondrop = function () {
+       container.appendChild(box);
+    }
+
+</script>

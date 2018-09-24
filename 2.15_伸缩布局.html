@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 伸缩布局
+        伸缩布局不是加在子元素上的，而是加在父元素上的
+
+        伸缩布局的特点：子元素不会超过父元素主轴方向的边界，如果子元素不够放，会自动调子元素的宽度
+
+
+        伸缩布局默认是：让子元素在主轴方向上依次排列
+    -->
+    <style>
+        ul{
+            padding: 0;
+            list-style: none;
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            /* 让子元素使用伸缩布局 */
+            display: flex;
+            /* row是默认值：代表x轴为主轴
+                column：代表y轴为主轴
+             */
+            flex-direction: column;
+        }
+
+        li{
+
+            width: 150px;
+            height: 150px;
+            background-color: yellowgreen;
+    
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

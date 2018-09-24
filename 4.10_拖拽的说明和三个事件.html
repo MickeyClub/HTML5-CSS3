@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        在HTML里面，有些元素可以拖拽，但是有些元素又不允许拖拽
+
+        如果元素默认不能拖拽，那么就给它加一个行内属性叫 draggable 并且给一个true
+
+
+        事件：
+            ondragstart：拖拽开始出发
+            ondrag:拖拽中一直出发
+            ondragend:拖拽结束触发
+     -->
+
+     <style>
+         .box{
+             width: 100px;
+             height: 100px;
+             background-color: #f00;
+
+             position: absolute;
+         }
+     </style>
+</head>
+<body>
+    
+    <img src="./4_images/1.jpg" alt="" draggable="true">
+
+    <div id="box" class="box" draggable="true"></div>
+</body>
+</html>
+
+
+<script>
+
+    var  box = document.getElementById('box');
+
+    //拖拽开始事件
+    box.ondragstart = function(){
+
+        console.log('开始了');
+    }
+
+    //拖拽中
+    box.ondrag = function(){
+
+        console.log('....');
+        
+    }
+
+    //拖拽结束事件
+    box.ondragend = function(e){
+
+        /*
+            screenX:相对于屏幕左上角
+            pageX：相对于页面左上角（文档左上角）
+            clientX：相对于可视区域左上角
+        */
+        console.log(e);
+        box.style.left =  e.pageX + "px";
+        box.style.top =  e.pageY + "px";
+        
+    }
+</script>

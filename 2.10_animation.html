@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        animation 是C3中的一个属性，要用它之前，还需要先制定一个动画剧本
+
+        怎么设置动画剧本？
+                @keyframes 剧本名字{
+
+                    from{}
+                    to{
+                        //主要写在to里面
+                    }
+                }
+     -->
+    <style>
+
+        .box{
+
+            width: 174px;
+            height: 126px;
+            background: url('img/fish.png') no-repeat;
+            animation: swiming 1.5s steps(11) infinite;
+
+        }
+
+        @keyframes swiming {
+            from{}
+            to{ 
+                /* 剧本 */
+                background-position-y: -1386px;
+            }
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

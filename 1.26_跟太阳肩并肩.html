@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        html,body{
+            /* html的高度跟文档的高度一样高，就代表跟浏览器高度一样高 */
+            height: 100%;  
+            overflow: hidden;
+        }
+
+        img{
+
+            position: absolute;
+            bottom:-190px;
+            transition: all 5s;
+        }
+        
+        body{
+            /* background: radial-gradient(100px at center center,red,orange,skyblue); */
+            background: radial-gradient(400px at right top,red,orange,skyblue) 
+        }
+
+        body:hover img{
+            transform: translate(1600px,-900px) rotate(90deg) scale(0.2)
+        }
+
+    </style>
+
+</head>
+<body>
+    <img src="img/rocket.png" alt="">
+</body>
+</html>
+<script>
+    var obj = new Object();
+
+</script>

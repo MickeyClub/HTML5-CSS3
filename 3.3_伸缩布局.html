@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        伸缩布局：
+                特点：子元素在主轴方向上永远不会超出
+
+                默认是在主轴方向依次排列
+
+        默认的主轴是x轴，副轴是y轴
+
+     -->
+
+     <style>
+     
+        ul{
+            width: 600px;
+            height: 600px;
+            padding: 0;
+            list-style: none;
+            border: 1px solid #000;
+            /* 让子元素用伸缩布局（弹性布局） */
+            display: flex;
+            
+            /* 
+                row：主轴方向为x轴（默认起点靠左）
+                row-reverse:主轴方向依然为x轴，只不过起点靠右
+                column：主轴方向为y轴
+                column-reverse：主轴方向为y轴，只不过靠下
+            */
+            flex-direction: column;
+
+            /* 设置元素在主轴方向上的排列位置
+
+                flex-start：默认值，起点对齐
+                flex-end 跟reverse不一样，这个只是 终点对齐
+                center：居中
+                space-around：元素和元素之间有间距，两边也有间距，不一定有间距，要看主轴方向够不够放，够放才有间距
+                space-between：元素和元素之间有间距，两边没有间距，不一定有间距，要看主轴方向够不够放，够放才有间距
+            
+            */
+            justify-content: space-around;
+
+            /* 统一设置所有子元素在副轴方向上的排列
+                flex-start：在副轴起点对齐
+                flex-end：在副轴终点对齐
+                center：在副轴中间对齐
+            */
+            align-items: center;
+        }
+
+        li{
+
+            width: 150px;
+            height: 150px;
+            background-color: yellowgreen;
+            text-align: center;
+            line-height: 150px;
+        }
+     </style>
+</head>
+<body>
+    
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

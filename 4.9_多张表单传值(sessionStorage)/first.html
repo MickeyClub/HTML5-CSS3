@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        姓名: <input type="text" id="name">
+        年龄: <input type="text" id="age">
+        电话号码: <input type="text" id="tel">
+
+        <input type="button" id="next" value="点我继续">
+    </form>
+</body>
+</html>
+
+
+<script>
+   document.getElementById('next').onclick = function () {
+       //将注册信息临时保存
+       var name = document.getElementById('name').value;
+       var age = document.getElementById('age').value;
+       var tel = document.getElementById('tel').value;
+
+       //将js对象转成json对象并存进本地临时数据
+       var obj = {name: name, age: age, tel: tel}
+       //转json
+       var str = JSON.stringify(obj);
+       //存本地临时数据
+       sessionStorage.setItem('info',str);
+
+       //跳转另外一页
+       location = "secibd.html"
+
+   }
+   
+</script>

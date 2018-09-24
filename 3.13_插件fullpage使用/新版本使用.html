@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="new/fullpage.min.css">
+    <script src="src/jquery-1.8.3.min.js"></script>
+    <script src="new/fullpage.min.js"></script>
+
+</head>
+
+<body>
+    <div id="dowebok">
+        <div class="section">
+            <h3>第一屏</h3>
+        </div>
+        <div class="section">
+            <h3>第二屏</h3>
+        </div>
+        <div class="section">
+            <h3>第三屏</h3>
+        </div>
+        <div class="section">
+            <h3>第四屏</h3>
+        </div>
+        <div class="section">
+            <h3>第屏</h3>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    
+    $(function () {
+        $('#dowebok').fullpage({
+            navigation: true,
+            sectionsColor: ["#00bfff","#9acd32","#ffaa00","#008800","#88ccee"],
+            //当每一屏给滚出时调用
+            afterLoad: function (a , b, c) {
+                console.log(a ,b,c);
+            }
+        });
+    });
+</script>

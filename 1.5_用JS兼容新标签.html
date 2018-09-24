@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    document.creatElement，可以创建本身就有的标签，也可以创建HTML中没有的标签（自定义标签），如果创建的是自定义标签，那么自定义标签默认是行内的
+
+
+    如果用JS的方式来兼容H5新增的结构标签，那么记得把它们改成块级元素
+
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        header{
+
+            width: 100px;
+            height: 100px;
+            background-color:red;
+ 
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    // 创建本身就有的标签，那么标签特点就是它本身的特点
+    // var span = document.createElement('span');
+    // span.innerHTML = "我是span"
+    // document.body.appendChild(span);
+
+    // var p = document.createElement('p');
+    // p.innerHTML = "我是p标签";
+    // document.body.appendChild(p);
+
+    //上面这些都是创建html中本身就有的标签，那么能不能创建html中没有的标签？
+
+    //行内元素
+    // var xxoo = document.createElement('xxoo');
+    // xxoo.innerHTML = "这是xxoo";
+    // document.body.appendChild(xxoo);
+
+    var header = document.createElement('header');
+    //证明其实兼容的本质就是创建一个自定义的标签
+    document.body.appendChild(header);
+    
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    视距：视觉距离
+
+    意思就是，模拟一个镜头来拍下你的元素，然后再展现到屏幕上
+
+    近大远小的类似效果
+
+
+    验证：视距就是模拟一个镜头到元素的距离
+
+    越近效果越明显，越远效果越不明显
+
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        img{
+
+            transform: perspective(500px) translateZ(10px);
+        }
+    </style>
+</head>
+<body>
+    <img src="img/dog2.jpg" alt="">
+</body>
+</html>

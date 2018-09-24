@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 180px;
+            height: 270px;
+            border: 1px solid #000;
+            /*
+               默认情况下，图片比盒子大，那么图片原样显示，只是左上角对齐，显示一点点，如果图片比盒子小，那么就默认平铺 
+                参数1：图片的路径，可以加引号，也可以不加
+                参数2：是否平铺，一般用no-repeat，可选值还有repeat,repeat-x,repeat-y
+                参数3：设置图片的位置（ background-position ） 后面可以加一个 / 设置图片的大小
+                        但是建议不要直接改图片大小，因为可能会变形
+                        cover和containr都是按比例缩放，只不过cover是覆盖（它一定会覆盖盒子）
+                        container一定会被盒子包含
+                
+                如果有多张图片，就用逗号隔开
+            */
+            /* background: url(small.png) no-repeat left top/contain red; */
+            /* background: red; */
+
+            background:url(timg.jpg) no-repeat left top / contain,url(small.png) no-repeat left bottom/contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

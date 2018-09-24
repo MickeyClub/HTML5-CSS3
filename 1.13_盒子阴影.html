@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: black;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            margin: 100px auto;
+            
+            /* 
+                参数1：水平偏移位置，值越大越往右
+                参数2：垂直偏移位置，值越大越往下
+                参数3：模糊度
+                参数4：阴影的宽度
+                参数5：阴影的颜色
+
+                还有个参数：inset，代表是盒子内的阴影没有外扩，可以写在最后，也可以写在最前面，但不能写在数字的中间
+            */
+            box-shadow:  0 0 10px 10px  hotpink;
+        }
+
+        img{
+            
+            display: block;
+            margin:50px auto;
+
+            box-shadow: 0 0 10px 10px hotpink;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="box"></div>
+
+    <img src="lq.png" alt="">
+</body>
+</html>

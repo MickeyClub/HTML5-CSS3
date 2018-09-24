@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html,body{
+            height: 100%;
+        }
+
+        body{
+            border: 5px dashed #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>拖拽文件到框框内</h1>
+</body>
+</html>
+
+<script>
+
+    document.body.ondragover = function(e){
+
+        e = e || window.event;
+        e.preventDefault();
+    }
+
+    //浏览器默认就有一个拖拽的行为：就是把拖进来的文件给打开
+    //跟事件有关的信息存在事件对象里了
+    document.body.ondrop = function(e){
+
+        e.preventDefault();
+
+        // console.log(e.dataTransfer.files[0]);
+        
+        // var url = URL.createObjectURL(e.dataTransfer.files[0]);
+        // document.body.style.background = "url("+ url + ")";
+
+        //如果要上传，就走下面代码，发一个异步请求，提交文件
+        // var fm = new FormData();
+        // fm.append('icon',e.dataTransfer.files[0]);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('post','data.php');
+        // xhr.send(fm);
+        
+
+        //文件读取器,所有的文件都是二进制，就是把你选择的文件读取成二进制
+        var read = new FileReader();
+        // 读取文件
+        read.readAsDataURL(e.dataTransfer.files[0]);
+
+        // 读取后的结果怎么拿？
+        //读取完毕调用的事件
+        read.onload = function(){
+
+            // result属性里保存了读取到的文件的二进制信息
+            // base64加密后的二进制信息
+            console.log(read.result);
+            document.body.style.background = "url("+ read.result + ")";
+        }
+    }
+</script>

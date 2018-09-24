@@ -1,0 +1,356 @@
+/* 第一页 */
+
+.section1{
+    background: url('../images/01/products.png') no-repeat center,
+    url('../images/01/bg.png') no-repeat center;
+}
+
+.section1 .sofa{
+    position: absolute;
+    left: 50%;
+    margin-left: -165px;
+    bottom: 50%;
+    margin-bottom: 75px;
+    animation: shake infinite .6s alternate;
+}
+.section1 .ball{
+    position: absolute;
+    right: 70px;
+    animation: shake infinite .6s alternate;
+}
+
+@keyframes shake{
+    form{}
+    to{
+        transform: translate(0,-30px);
+    }
+}
+
+/* 第二页 */
+.section2{
+    /* 默认不平铺,背景颜色 */
+    background: url('../images/02/bg.png') no-repeat center bottom;
+    /* position: relative; */
+}
+
+.section2 .search{
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    margin-top: 100px;
+}
+
+.section2 .sofas{
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    margin-right: -220px;
+    /* margin-top: -10px; */
+    margin-bottom: -260px;
+}
+
+/* 第三页 */
+.section3 {
+    background: url('../images/03/bg.png') no-repeat center;
+}
+
+.section3 .sofa{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -235px;
+    margin-top: -100px;
+}
+
+.section3 .color{
+    width: 296px;
+    height: 131px;
+    background: url('../images/03/color01.gif') no-repeat;
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    margin-left: 40px;
+    margin-top: -20px;
+}
+.section3 .add{
+    width: 218px;
+    height: 58px;
+    background: url('../images/03/add01.gif') no-repeat;
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    margin-left: 40px;
+    margin-top: 120px;
+}
+
+.section3.animation .color{
+    transition: all 1s;
+    background: url('../images/03/color02.gif') no-repeat;
+    
+}
+.section3.animation .add{
+    transition: all 1s;
+    background: url('../images/03/add02.gif') no-repeat;
+}
+
+/* 4 */
+.section4{
+    background: url('../images/04/bg.png') no-repeat center bottom ;
+}
+
+.section4 .colud{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    animation: cloud infinite 40s alternate ;
+}
+
+@keyframes cloud{
+    form{}
+    to{
+        transform: translateX(-1200px);
+    }
+}
+
+.section4>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section4 .keyboard{
+    width: 283px;
+    height: 270px;
+    background: url('../images/04/keyboard.png') no-repeat;
+    position: relative;
+    opacity: 0;
+}
+
+.section4 .address{
+    position: absolute;
+    /* margin-left: 60px;
+    margin-top: 60px; */
+    left: 60px;
+    top: 55px;
+}
+
+.section4 .carBox{
+    /* width: 500px;
+    height: 500px; */
+    position: absolute;
+    bottom:50px;
+    width: 450px;
+    height: 400px;
+}
+
+.section4 .carBox img{
+    position: absolute;
+}
+.section4 .carBox .sofa{
+    position: absolute;
+    left: 150px;
+}
+
+/* 第五页 */
+.section5 {
+    background: url('../images/05/bg.png');
+}
+
+.section5 .cardBox{
+    width: 358px;
+    height: 221px;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    margin-bottom: -100px;
+}
+
+.section5 .cardBox img{
+    position: absolute;
+}
+
+.section5 .bill{
+    left: 120px;
+    top: 0px;
+    /* z-index: 5 */
+}
+
+.section5 .mouse{
+    width: 205px;
+    height: 450px;
+    background: url('../images/05/mouse01.png')no-repeat center bottom;
+    position: absolute;
+    left: 50%;
+    margin-left: 400px;
+    top: 0;
+}
+
+.section5 .hand {
+    width: 170px;
+    height: 375px;
+    background: url('../images/05/hand.png');
+    position: absolute;
+    left: 50%;
+    margin-left: 370px;
+    bottom: 0;
+}
+.section5>div{
+    perspective: 800px;
+}
+
+.section5 .words{
+    position: absolute;
+    left: 50%;
+    margin-left: -270px;
+    top: 50px;
+    opacity: 0;
+    /* transform: rotateY(-360deg); */
+}
+
+.section5.animation .words{
+    transition: all 1s;
+    opacity: 1;
+    transform:  rotateY(-360deg) scale(1.2);
+}
+
+.section5.animation .hand{
+    transition: all 1s;
+    bottom: 250px;
+}
+
+.section5.animation .mouse{
+    transition: all .5s 1s;
+    bottom: 0;
+    background: url('../images/05/mouse02.png')no-repeat center bottom;
+}
+.section5.animation .bill{
+    transition: all 1s 1.5s;
+    top: -130px;
+}
+
+/* 第六页 */
+
+.section6{
+    background: url('../images/06/bg.png') no-repeat -240px bottom;
+}
+
+.section6 .carBox{
+    width: 221px;
+    height: 122px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    bottom: 90px;
+}
+
+.section6 .box{
+    width: 123px;
+    height: 100px;
+    position: absolute;
+    /* left: 500px;
+    top: 150px; */
+    left: 50%;
+    /* margin-left: -400px; */
+    margin-left: -60px;
+    top: -400px;
+}
+
+.section6 .box img{
+    position: absolute;
+}
+
+.section6 .sofa{
+    left: 20px;
+    top: -20px;
+    width: 80px;
+}
+
+.section6 .carBox .car{
+    position: absolute;
+}
+.section6 .carBox .man{
+    height: 150px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 0;
+}
+
+.section6 .door{
+    position: absolute;
+    right: 905px;
+    bottom: 116px;
+    display: none;
+}
+.section6 .girl{
+    position: absolute;
+    right: 905px;
+    bottom: 116px;
+    display: none;
+    height: 110px;
+}
+
+/* 7 */
+.section7{
+    background: url('../images/07/bg.png') center bottom;
+}
+
+.section7 .star{
+    width: 105px;
+    height: 17px;
+    background: url('../images/07/stars3.png');
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    top: 484px;
+    width: 0;
+}
+.section7 .good{
+    width: 72px;
+    height: 44px;
+    position: absolute;
+    left: 50%;
+    margin-left: -280px;
+    top: 520px;
+    opacity: 0;
+}
+
+.section7.animation .star{
+    
+    transition: all 1s steps(5);
+    width: 105px;
+}
+.section7.animation .good{
+    transition: all 1s 1s;
+    opacity: 1;
+}
+
+
+/* 8 */
+.section8{
+    background: url('../images/08/bg.png');
+}
+
+.section8 .begin{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -80px;
+    margin-left: -195px;
+}
+
+.section8 .hand{
+    position: absolute;
+    left: 50%;
+    /* top: 100px; */
+    bottom: 0;
+}
+
+.section8 .again{
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+}

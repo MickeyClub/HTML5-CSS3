@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+           ul {
+            padding: 0;
+            list-style: none;
+            border: 1px solid #000;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            
+            /* 开启换行 
+                当你设置的子元素的宽度会超过父元素的主轴方向时，默认会自动缩放
+                但是如果开启了这个属性，就会换行不缩放
+
+                原则就是：一行能放就放，不能放就下一行
+            */
+
+            flex-wrap: wrap;
+            /* 统一设置所有元素在副轴居中 */
+            /* align-items: center; */
+            
+            /* 
+            设置换行的方式
+                flex-start：就代表在副轴的起点一行一行换，行与行之间没有间距
+                flex-end:就代表在副轴的终点一行一行开始，行与行之间没有间距
+                center：在副轴的中间开始换行，也没有间距
+                space-around:行与行之间有间距，两边也有间距
+                space-between:行与行之间有间距，两边没有间距
+                stretch：默认值：拉伸，大家平分区域
+            */
+            /* align-content: flex-start;  */
+            /* 用的非常的少，几乎不用 */
+
+
+            flex-direction: column;
+        }
+
+        li {
+
+            width: 150px;
+            height: 150px;
+
+            /* 就是设置在主轴方向上的大小 */
+            /* flex-basis: 150px;  */
+            background-color: yellowgreen;
+            line-height: 150px;
+        }
+
+   
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

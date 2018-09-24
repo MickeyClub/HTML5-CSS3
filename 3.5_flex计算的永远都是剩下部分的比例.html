@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        ul {
+            padding: 0;
+            list-style: none;
+            border: 1px solid #000;
+            width: 600px;
+            height: 1000px;
+            display: flex;
+
+        }
+
+        li {
+
+            width: 150px;
+            height: 150px;
+            background-color: yellowgreen;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        /* 占1份 */
+
+        li:nth-child(1) {
+
+            width: 300px;
+        }
+
+        /* 占2份 */
+        li:nth-child(2) {
+           
+            width:250px;
+        }
+
+        /* 占3份 */
+
+        li:nth-child(3) {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

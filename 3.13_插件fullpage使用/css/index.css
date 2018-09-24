@@ -1,0 +1,185 @@
+/* 1.
+    因为fullpage会帮我们自动生成一个div
+    所以要作用在子div
+*/
+.section1>div{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section1>div .texts img{
+    opacity: .5;
+    margin-left: 30px;
+}
+
+.section1.animation>div .texts img{
+    transition: all 1s;
+    opacity: 1;
+    margin-left: 0;
+}
+
+/* 2 */
+
+.section2>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section2>div .shield{
+    max-width: 420px;
+}
+.section2>div>img{
+    max-width: 700px;
+}
+
+.section2>div .shield img:nth-child(3){
+    transform: translate(700px,450px) rotate(370deg)
+}
+.section2.animation>div .shield img:nth-child(3){
+    transition: all 1s;
+    transform: none;
+}
+
+
+/* 3 */
+.section3 >div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.section3 .circle {
+    width: 453px;   
+    height: 449px;
+    background: url('../images/circle.png') no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .circle img{
+    transform: translate(-1000px,1000px);
+}
+
+.section3.animation .circle img{
+    transition: all 1s;
+    transform: none;
+}
+
+/* 4 */
+.section4>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.section4 .search{
+    position: relative;
+    width: 529px;
+    height: 66px;
+    background: url('../images/search.png');
+}
+
+.section4 .searchBox{
+
+    height:438px;
+    transform: translate(-1000px);
+}
+.section4.animation .searchBox{
+    transition: all 1s;
+    transform: none;
+}
+.section4 .search .key{
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    /* width: 99px; */
+    width: 0;
+    height: 22px;
+    background: url('../images/key.png')
+}
+
+.section4.animation .search .key{
+    transition: all 1s 1s;
+    width: 99px;
+}
+
+.section4 .result{
+    width: 529px;
+    /* height: 372px; */
+    height: 0;
+    background-image: url('../images/result.png');
+}
+
+.section4.animation .result{
+    height: 372px;
+    transition: all 2s 2s;
+}
+
+/* 5 */
+.section5>div{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.browser{
+   width: 1000px;
+   /* border: 1px solid #fff;  */
+   flex: 1;
+   position: relative;
+}
+
+.browser img:nth-child(2){
+    /* align-self: flex-end; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.browser img:nth-child(1){
+    float: left;
+}
+
+
+.line{
+    position: absolute;
+    width: 100%;
+}
+.line:nth-of-type(1){
+    border-top: 5px solid white;
+    transform: translateX(-2000px);
+    top: 0;
+    left: 0;
+
+}
+.line:nth-of-type(2){
+    border-right: 5px solid white;
+    right: 0;
+    top: 0;
+    width: 5px;
+    transform: translateY(-10000px);
+    height: 100%;
+}
+.line:nth-of-type(3){
+    border-bottom: 5px solid white;
+    bottom: 0;
+    left: 0;
+    transform: translateX(3000px);
+}
+.line:nth-of-type(4){
+    border-left: 5px solid white;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    transform: translateY(2000px);
+}
+
+.section5.animation .line{
+    transition: all 1s;
+    transform: none;
+}

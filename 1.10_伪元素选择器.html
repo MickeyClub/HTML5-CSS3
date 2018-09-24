@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        伪元素写两个冒号，当然写一个也可以，但那是浏览器优化，规范里要求写两个
+
+        伪元素选择器：
+                before
+                after
+            一般主要是为了清除浮动带来的影响
+
+     -->
+
+    <style>
+        p::first-letter {
+
+            font-size: 23px;
+        }
+
+        p::first-line {
+
+            background-color: #f00;
+        }
+
+        p::selection {
+
+            background-color: #0f0;
+        }
+
+        input::placeholder {
+
+            color: Red;
+        }
+        
+        /* 
+            总结：默认是行内元素
+            就算没有文字，也需要加content,值传一个空
+         */
+        .box::before {
+
+            content: "";
+            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+
+        .box::after {
+
+            content: "我在之后";
+            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">我是div</div>
+
+    <input type="text" placeholder="请输入账号">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae commodi cupiditate, hic, officiis quibusdam doloremque
+        perspiciatis quam ab doloribus, eaque repudiandae ut consectetur ad adipisci atque. Accusamus provident possimus
+        aliquid.</p>
+</body>
+
+</html>

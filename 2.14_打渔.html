@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: skyblue;
+        }
+
+        .fish {
+
+            width: 174px;
+            height: 126px;
+            background: url('img/fish.png') no-repeat;
+
+            /* 如果有多个动画用逗号隔开，目前学过的属性几乎都是要加多个的时候就用逗号隔开，除了transform是用空格 */
+            /* animation: shake 1s infinite steps(11),swimming 4s; */
+        }
+
+        .fish:first-child {
+            animation: shake 1s steps(11) infinite,swimming 4s infinite;
+        }
+
+        .fish:nth-child(2) {
+            animation: shake 1s steps(11) infinite,swimming 3s infinite;
+        }
+
+        .fish:nth-child(3) {
+            animation: shake 1s steps(11) infinite,swimming 2s infinite;
+
+        }
+
+        .fish:nth-child(4) {
+            animation: shake 1s steps(11) infinite,swimming 1s infinite;
+
+        }
+
+        .fish:nth-child(5) {
+            animation: shake 1s steps(11) infinite,swimming 6s infinite;
+
+        }
+
+        /* 游动的动画 */
+
+        @keyframes swimming {
+
+            /* 什么时候用百分比？如果一个动画需要好几个动作，就可以用百分比，如果只是一个动作就可以to */
+            /* 动画的时长前一半时间 */
+            50% {
+                transform: translateX(1600px)
+            }
+            
+            60% {
+                transform: translateX(1600px) rotate(180deg)
+            }
+            90% {
+                transform: rotate(-180deg)
+            }
+
+        }
+
+        @keyframes shake {
+            form{}
+            to{
+                background-position-y: -1386px;
+            }
+          
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+</body>
+
+</html>

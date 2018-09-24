@@ -1,0 +1,179 @@
+<!-- 
+
+    1.完成布局
+            用一个大盒子包2个部分：一个video,一个div，类叫controls
+
+            用伸缩布局，主轴方向为y轴，就一上一下
+            大盒子给宽600，高400
+            video给高350，宽100%
+            controls给flex:1 代表用剩余高度
+
+
+    2. controls有三大元素：两个a标签用来表示播放和全屏  中间一个div表示进度条
+            进度条思路：进度条里面再放一个子div，子div高度为100%，宽度为百分之几，就代表进度到哪了
+                        所以子元素默认先给0%,背景颜色为灰色
+
+        两个a标签记得先给默认字体图标和宽高，以及居中，宽50高50
+
+        controls也用弹性布局
+            给进度条flex:1代表用剩余的宽度，高度为100%
+
+
+    3.给播放加点击事件
+            3.1 判断当前的类，是不是播放的那个字体图标类，如果是
+                    做播放的功能，并且把字体变暂停
+                否则
+                    做暂停的功能，把字体图标变播放
+
+
+    4.给全屏加点击事件
+            要记得做能力检测
+                    webkitRequestFullScreen()
+                    mozRequestFullScreen()
+                    msRequestFullscreen()
+
+  
+    5. 进度条的点击事件
+            5.1 先获取事件对象
+            5.2 用事件对象的offsetX赋值给子元素的宽度，因为offsetX是获取到相对于自身左上角的x距离
+            5.3 用e.offsetX 除以 进度条的offsetWidth 得到占比，再用这个占比乘以视频的总时长，再把结果给视频的currentTime
+
+    
+    6. 视频播放过程中进度条跟着动
+            给视频加一个 ontimeupdate事件
+
+            在事件里 用当前时间 / 总时间 * 100 + "%" 得到百分比
+            再直接把百分比交给son的width就行了
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        body{
+            background-color: black;
+        }
+        .player{
+            width: 1200px;
+            height: 800px;
+            border: 1px solid #fff;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        video{
+            width: 100%;
+            height: 700px;
+        }
+        .controls {
+            flex: 1;
+            display: flex;
+        }
+        .controls a{
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: #fff;
+            border-top: 1px solid #ffffff;
+        }
+
+        .progress{
+            flex: 1;
+            height: 100%;
+            background: #fff;
+        }
+        .son{
+            width: 0%;
+            height: 100%;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <video id="video" src="滑板女神.mp4"></video>
+
+        <div class="controls">
+            <a id="play" href="javascript:void(0)" class="fa fa-play-circle-o"></a>
+            <div class="progress" id="progress">
+                <div class="son" id="son"></div>
+            </div>
+
+            <a id="full" href="javascript:" class="fa fa-arrows-alt"></a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    //播放器
+    var video = document.getElementById('video');
+    //进度条提示
+    var son = document.getElementById('son');
+
+    //播放点击事件
+    document.getElementById('play').onclick = function () {
+        //判断当前图标的类是否符合播放    //contains 包含
+        if(this.classList.contains("fa-play-circle-o")){   
+            this.classList.add('fa-pause');
+            this.classList.remove('fa-play-circle-o');
+            video.play();   //视频启动
+        }else{
+            video.pause();  //视频停止
+            this.classList.remove('fa-pause');
+            this.classList.add('fa-play-circle-o');
+        }
+    }
+
+    //全屏点击事件
+    document.getElementById('full').onclick = function () {
+        if(video.webkitRequestFullScreen){
+            video.webkitRequestFullScreen();
+        }else if(video.mozRequestFullScreen){
+            video.mozRequestFullScreen();
+        }else{
+            video.msRequestFullScreen();
+        }
+    }
+
+    //视频播放过程进度条跟着动事件
+    document.getElementById('progress').onclick = function (e) {
+
+        //每次点击修改进度条宽度
+        son.style.width = e.offsetX + "px";
+
+        //视频进度跟着进度条的宽度改变,需要先计算百分比
+        //要先算你点击的进度条位置的比分比，再用视频总时长乘以百分比，得到视频应该到的时间数
+        var percent = e.offsetX / this.offsetWidth;
+
+        //currentTime代表设置视频的 当前时间
+        //duration代表视频的总时长
+        video.currentTime = video.duration * percent;
+
+        
+    }
+
+    video.ontimeupdate = function () {
+
+        //要用视频的当前时间得到一个百分比     当前时间 / 总时间
+        var res = video.currentTime / video.duration *100 + "%";
+        
+
+        //当前播放的视频的将百分比给son盒子的宽度 使其跟着动
+        son.style.width = res;
+    }
+</script>

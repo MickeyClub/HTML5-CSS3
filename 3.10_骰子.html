@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            padding: 0;
+            list-style: none;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            background: lightgray;
+            border-radius: 20px;
+            display: flex;
+            
+        }
+        li{
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .one{
+            /* 主轴居中 */
+            justify-content: center;    
+            /* 副轴居中 */
+            align-items: center;
+        }
+        .two{
+            justify-content: space-around;
+            align-items: center;
+        }
+       
+        .three{
+            justify-content: space-around;
+        }
+    
+        .three li:nth-child(1){
+            margin-top: 10px;
+        }
+        .three li:nth-child(2){
+            align-self: center;
+        }
+        .three li:nth-child(3){
+            align-self: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .last div{
+            width: 100%;
+            /* border: 1px solid #000; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <ul class="one">
+        <li></li>
+    </ul>
+    <ul class="two">
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="three">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+        
+        <div>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+</body>
+</html>

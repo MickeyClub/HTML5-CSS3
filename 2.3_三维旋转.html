@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    /* 
+    如果希望代码中的三维变换能有一些立体效果
+        
+        那么就需要加一个视距才能有一些比较好的立体效果
+
+    */
+
+        ul{
+
+            padding: 0;
+            list-style: none;
+        }
+
+        li{
+
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            float: left;
+            margin-left: 100px;
+            transition: all 1s;
+            transform: perspective(500px);
+
+        }
+
+        li:first-child:hover{
+            /* 因为后面的transform会覆盖前面的,所以也要加视距 */
+            transform: perspective(500px) rotateX(45deg);
+        }
+
+        li:nth-child(2):hover{
+            transform: perspective(500px) rotateY(45deg);
+        }
+
+        li:last-child:hover{
+            transform: perspective(500px) rotate(45deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>沿着x轴旋转</li>
+        <li>沿着y轴旋转</li>
+        <li>沿着z轴旋转</li>
+    </ul>
+</body>
+</html>

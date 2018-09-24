@@ -1,0 +1,43 @@
+
+
+<!-- 
+    什么叫自定义属性？
+            就是标签原本不存在的属性叫自定义属性
+
+
+    以前写自定义属性存在的问题：
+            1.一眼看过去很难区分这到底是自己有的属性还是自定义属性
+            2.用JS取值和赋值太麻烦
+
+
+    H5里新增了自定义属性的写法
+
+            1.写自定义属性的时候，前面加一个前缀data-
+            2.如果你是按H5规范（data-）写的这个自定义属性，那么取值时就能很方便的取到了
+                    用 元素.dataset['自定义属性名'];  不用加data-
+
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" data-age="16" data-sex="nan"></div>
+</body>
+</html>
+
+<script>
+    /* H5里新增了自定义属性的写法
+
+        1.写自定义属性的时候，前面加一个前缀data-
+        2.如果你是按H5规范（data-）写的这个自定义属性，那么取值时就能很方便的取到了
+                用 元素.dataset['自定义属性名'];  不用加data-*/
+   console.log( document.getElementById('div1').dataset['age']);
+   console.log( document.getElementById('div1').dataset['sex']);
+
+</script>

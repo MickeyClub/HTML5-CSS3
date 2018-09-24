@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .baymax {
+            width: 430px;
+            height: 430px;
+            border: 10px solid #000;
+            box-sizing: border-box;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            background-color: #dd2c2a;
+        }
+
+        .baymax:after {
+            content: '';
+            border-radius: 50%;
+            box-shadow: inset 0 -35px 0 rgba(0, 0, 0, 0.2);
+            position: absolute;
+            z-index: 3;
+            width: 405px;
+            height: 405px;
+            top: 5px;
+            right: 2px;
+        }
+
+        .head {
+            width: 210px;
+            height: 170px;
+            border: 10px solid #000;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: #fff;
+        }
+        .eays{
+            height: 2px;
+            width: 100px;
+            background: #000;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .eays::before, .eays::after{
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: #000;
+            position: absolute;
+            border-radius: 50%;
+            transform: translateX(-10px) skew(-5deg);
+            z-index: 3;
+        }
+        .eays::after{
+            transform: translateX(85px) skew(5deg)
+        }
+        .body{
+            width: 250px;
+            height: 280px;
+            border: 10px solid #000;
+            border-radius: 50% 50% 0 0;
+            border-bottom:  none;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-24%);
+            z-index: 0;
+            background: #fff;
+        }
+
+        .hand{
+            width: 70px;
+            height: 130px;
+            border: 10px solid #000;
+            border-radius: 70px 70px 0 0;
+            background: #fff;
+            z-index: 4;
+            position: absolute;
+            left: 42px;
+            bottom: -1000px;
+            transition: 10s all;
+            animation: baymax 10s infinite alternate;
+
+        }
+       
+        .finger{
+            width: 20px;
+            height: 75px;
+            border: 10px solid #000;
+            border-radius: 25px 25px 0 0;
+            position: absolute;
+            bottom: 92px;
+            background: #fff;
+            border-bottom: none;
+            left: 15px;
+        }
+        .finger::after, .finger::before{
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+        }
+
+         body:hover .hand{
+            bottom: 0px;
+         }
+
+        @keyframes baymax{
+            form{
+                /* transform: scale(1.5) */
+                transform: translateY(-100px);
+            }
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="baymax">
+        <!-- 头 -->
+        <div class="head">
+            <!-- 眼睛 -->
+            <div class="eays"></div>
+        </div>
+        <!-- 身体 -->
+        <div class="body"></div>
+        <!-- 手 -->
+        <div class="hand">
+            <!-- 手指 -->
+            <div class="finger"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- 
+
+        sessionStorage跟session没有半毛钱关系
+
+
+        sessionStorage也是做本地存储的
+            localStorage是只要自己不手动删就不会消失
+            sessionStorage是关闭浏览器就木有了！
+
+        用法跟localStorage是一样一样的
+     -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="button" value="保存" id="save">
+    <input type="button" value="获取" id="get">
+    <input type="button" value="删除" id="remove">
+</body>
+</html>
+
+<script>
+
+    document.getElementById('save').onclick = function(){
+
+        sessionStorage.setItem('name','jack');
+    }
+
+    document.getElementById('get').onclick = function(){
+
+         var str =  sessionStorage.getItem('name');
+         console.log(str);
+         
+    }
+
+
+    document.getElementById('remove').onclick = function(){
+
+        //根据key来删除
+        sessionStorage.removeItem('name');
+        
+        //下面是所有清空
+        // sessionStorage.clear();
+    }
+</script>
